@@ -1,0 +1,31 @@
+[project]
+name = "thumbnail-generator-gui"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "akihiro-i", email = "inoue.akihiro.ib5@naist.ac.jp" }
+]
+dependencies = [
+    "numpy>=2.2.4",
+    "pillow>=11.1.0",
+    "opencv-python>=4.11.0.86",
+    "opencv-python-headless[cuda]>=4.11.0.86",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pyinstaller>=6.12.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/thumbnail_generator_gui"]
